@@ -74,7 +74,7 @@
 
     
         <meta property="article:published_time" content="Sat Jun 17 2017 22:39:46 GMT+0800" />
-        <meta property="article:modified_time" content="Sun Jun 18 2017 03:02:24 GMT+0800" />
+        <meta property="article:modified_time" content="Sun Jun 18 2017 03:08:01 GMT+0800" />
     
 
     <!-- The Twitter Card protocol -->
@@ -115,7 +115,7 @@
     "headline": "菜鸡的lambda演算入门笔记（一）",
     "url": "http://monkingxue.github.io/2017/06/17/菜鸡的lambda演算入门笔记/index.html",
     "datePublished": "Sat Jun 17 2017 22:39:46 GMT+0800",
-    "dateModified": "Sun Jun 18 2017 03:02:24 GMT+0800",
+    "dateModified": "Sun Jun 18 2017 03:08:01 GMT+0800",
     "description": "",
     "mainEntityOfPage": {
         "@type": "WebPage",
@@ -496,9 +496,9 @@
 <p>这次的博客内容参考的是<a href="http://goodmath.blogspot.com/2006/05/my-favorite-calculus-lambda-part-1.html" target="_blank" rel="external">我最爱的 lambda 演算</a>，算是一个翻译加上点自己的理解了。</p>
 <h2 id="什么是-lambda-演算？"><a href="#什么是-lambda-演算？" class="headerlink" title="什么是 lambda 演算？"></a>什么是 lambda 演算？</h2><p>在谈论什么是 lambda 演算之前，我们先说一下 lambda。熟悉 Python 的同学现在肯定很鸡冻：“诶这个我知道！不就是匿名函数嘛！” 要我说，你们啊，too young！这里的 lambda 和 Python 中的匿名函数的关键字 lamba 不一样的哦，但是 lambda 确实都包含了函数的含义。</p>
 <p>回到 lambda 演算，这是一套用于研究函数定义、函数应用和递归的<a href="https://zh.wikipedia.org/wiki/%E5%BD%A2%E5%BC%8F%E7%B3%BB%E7%BB%9F" target="_blank" rel="external">形式系统</a>，是由著名的邱奇聚聚引入的，当然，它也可以被称为最小的通用程序设计语言。这里是不是有点晕？没事，让我们先来看看 lambda 演算的语法。</p>
-<h2 id="lambda-演算的语法"><a href="#lambda-演算的语法" class="headerlink" title="lambda 演算的语法"></a>lambda 演算的语法</h2><p>Lambda演算只有三类表达式：</p>
+<h2 id="lambda-演算的语法"><a href="#lambda-演算的语法" class="headerlink" title="lambda 演算的语法"></a>lambda 演算的语法</h2><p>lambda 演算只有三类表达式：</p>
 <ol>
-<li>函数定义：Lambda 演算中的函数是一个表达式，写成：<code>lambda x . body</code>，表示“存在一个参数为<code>x</code>的函数，它的返回值为<code>body</code>的计算结果。” 这时我们说：Lambda 表达式绑定了参数<code>x</code>。</li>
+<li>函数定义：lambda 演算中的函数是一个表达式，写成：<code>lambda x . body</code>，表示“存在一个参数为<code>x</code>的函数，它的返回值为<code>body</code>的计算结果。” 这时我们说：lambda 表达式绑定了参数<code>x</code>。</li>
 <li>标识符引用（Identifier reference）：标识符引用就是一个名字，这个名字用于匹配函数表达式中的某个参数名。</li>
 <li>函数应用（Function application）：函数应用写成把函数值放到它的参数前面的形式，如<code>(lambda x . plus x x) y</code>。</li>
 </ol>
