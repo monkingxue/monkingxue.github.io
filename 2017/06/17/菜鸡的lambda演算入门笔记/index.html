@@ -12,6 +12,8 @@
     
     <title>
         
+            菜鸡的lambda演算入门笔记（一） | 
+        
         Fantasy-Land
     </title>
 
@@ -36,7 +38,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="嘤嘤">
     <meta name="description" itemprop="description" content="">
-    <meta name="keywords" content="web code programmer software">
+    <meta name="keywords" content="web code programmer software,Lambda Calculus,Note">
 
     <!-- Site Verification -->
     
@@ -65,15 +67,18 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://monkingxue.github.io">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Fantasy-Land">
+    <meta property="og:title" content="菜鸡的lambda演算入门笔记（一） | Fantasy-Land">
     <meta property="og:image" content="/img/favicon.png" />
     <meta property="og:description" content="">
-    
+    <meta property="og:article:tag" content="Lambda Calculus"> <meta property="og:article:tag" content="Note"> 
 
+    
+        <meta property="article:published_time" content="Sat Jun 17 2017 22:39:46 GMT+0800" />
+        <meta property="article:modified_time" content="Sun Jun 18 2017 03:02:24 GMT+0800" />
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="Fantasy-Land">
+    <meta name="twitter:title" content="菜鸡的lambda演算入门笔记（一） | Fantasy-Land">
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content="/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
@@ -81,35 +86,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://monkingxue.github.io" />
+        <link rel="canonical" href="http://monkingxue.github.io/2017/06/17/菜鸡的lambda演算入门笔记/index.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
+
+
 <script type="application/ld+json">
 {
-    "@context": "http://schema.org",
-    "@type": "Website",
+    "@context": "https://schema.org",
+    "@type": "Article",
     "publisher": {
         "@type": "Organization",
         "name": "Fantasy-Land",
         "logo": "/img/favicon.png"
     },
-    "url": "http://monkingxue.github.io/index.html",
-    "image": {
-        "@type": "ImageObject",
-        "url": "/img/favicon.png"
+    "author": {
+        "@type": "Person",
+        "name": "嘤嘤",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/favicon.png"
+        },
+        "description": "这个人很懒，什么都不想写"
     },
+    "headline": "菜鸡的lambda演算入门笔记（一）",
+    "url": "http://monkingxue.github.io/2017/06/17/菜鸡的lambda演算入门笔记/index.html",
+    "datePublished": "Sat Jun 17 2017 22:39:46 GMT+0800",
+    "dateModified": "Sun Jun 18 2017 03:02:24 GMT+0800",
+    "description": "",
     "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": "http://monkingxue.github.io"
-    },
-    "description": "null"
+    }
 }
 </script>
-
-
 
 
     
@@ -292,421 +305,315 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
+                    <!-- Post TOC -->
+
     
-        <!-- Paradox Header -->
-        <!-- Daily pic -->
-<div class="mdl-card mdl-shadow--2dp daily-pic mdl-cell mdl-cell--8-col index-top-block">
-
-    <!-- Pic & Slogan -->
-    <div class="mdl-card__media mdl-color-text--grey-50" style="background-image:url(/img/daily_pic.png)">
-        <p class="index-top-block-slogan"><a href="#">
-        
-            
-                这个人很懒，什么都不想写
-            
-        
-        </a></p>
-    </div>
-
-    <!-- Avatar & Name -->
-    <div class="mdl-card__supporting-text meta mdl-color-text--grey-600">
-        <!-- Author Avatar -->
-        <div id="author-avatar">
-            <img src="/img/avatar.png" width="32px" height="32px" alt="avatar">
-        </div>
-        <div>
-            <strong>嘤嘤</strong>
-        </div>
-    </div>
-</div>
-
-        <!-- Blog info -->
-<div class="mdl-card mdl-shadow--2dp something-else mdl-cell mdl-cell--8-col mdl-cell--4-col-desktop index-top-block">
-
-    <!-- Search -->
-    
-    <!-- Google -->
-    <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable" method="post" action="">
-        <label id="search-label" class="mdl-button mdl-js-ripple-effect mdl-js-button mdl-button--fab mdl-color--accent mdl-shadow--4dp" for="search">
-            <i class="material-icons mdl-color-text--white" role="presentation">search</i>
-        </label>
-
-        <form autocomplete="off" id="search-form" method="get" action="//google.com/search" accept-charset="UTF-8" class="mdl-textfield__expandable-holder" target="_blank">
-            <input class="mdl-textfield__input search-input" type="search" name="q" id="search" placeholder="">
-            <label id="search-form-label" class="mdl-textfield__label" for="search"></label>
-
-            <input type="hidden" name="sitesearch" value="http://monkingxue.github.io">
-        </form>
-    </div>
-
-
-
-
-
-
-
-    <!-- LOGO -->
-    <div class="something-else-logo mdl-color--white mdl-color-text--grey-600">
-        <a href="#" target="_blank">
-            <img src="/img/logo.png" alt="logo" />
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
         </a>
     </div>
+    -->
 
-    <!-- Infomation -->
-    <div class="mdl-card__supporting-text meta meta--fill mdl-color-text--grey-600">
-        <!-- Blog Title -->
-        <div>
-            <strong>Fantasy-Land</strong>
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#一点废话"><span class="post-toc-number">1.</span> <span class="post-toc-text">一点废话</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#什么是-lambda-演算？"><span class="post-toc-number">2.</span> <span class="post-toc-text">什么是 lambda 演算？</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#lambda-演算的语法"><span class="post-toc-number">3.</span> <span class="post-toc-text">lambda 演算的语法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#柯里化（Currying）"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">柯里化（Currying）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#自由标识符-vs-绑定标识符"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">自由标识符 vs. 绑定标识符</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Lambda-演算的运算法则"><span class="post-toc-number">4.</span> <span class="post-toc-text">Lambda 演算的运算法则</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Alpha-转换"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">Alpha 转换</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Beta-规约"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">Beta 规约</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Eta-变换"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">Eta 变换</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#结语"><span class="post-toc-number">5.</span> <span class="post-toc-text">结语</span></a></li></ol>
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
+    
+
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        <!-- Custom Thumbnail -->
+        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(/img/菜鸡的lambda演算入门笔记.jpg)">
+    
+            <p class="article-headline-p">
+                菜鸡的lambda演算入门笔记（一）
+            </p>
         </div>
-        <div class="section-spacer"></div>
 
-        <!-- Pages -->
-        <button id="show-pages-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-            <i class="material-icons" role="presentation">view_carousel</i>
-            <span class="visuallyhidden">Pages</span>
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>嘤嘤</strong>
+        <span>6月 17, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
         </button>
-        <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="show-pages-button">
-            
-                <a class="index_share-link" href="/about" title="关于我">
-                    <li class="mdl-menu__item mdl-js-ripple-effect">
-                        关于我
-                    </li>
-                </a>
-            
-                <a class="index_share-link" href="/tags" title="标签云">
-                    <li class="mdl-menu__item mdl-js-ripple-effect">
-                        标签云
-                    </li>
-                </a>
-            
-        </ul>
+    -->
 
-        <!-- Menu -->
-        <button id="menubtn" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-            <i class="material-icons" role="presentation">more_vert</i>
-            <span class="visuallyhidden">show menu</span>
-        </button>
-        <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="menubtn">
-            
-                <!-- All Site UV -->
-                <a class="index_share-link" href="#">
-                    <li class="mdl-menu__item mdl-js-ripple-effect">
-                        <span id="busuanzi_container_site_uv">
-                            <span id="busuanzi_value_site_uv"></span>&nbsp;浏览量
-                        </span>
-                    </li>
-                </a>
-            
+    <!-- Qrcode -->
+    
 
-            
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/Lambda-Calculus/">Lambda Calculus</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/Note/">Note</a>
+    </ul>
+    
 
-            
-                <a class="index_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Fantasy-Land&url=http://monkingxue.github.io/&pic=&searchPic=false&style=simple" target="_blank">
-                    <li class="mdl-menu__item mdl-js-ripple-effect">
-                        分享到微博
-                    </li>
-                </a>
-            
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
 
-            
-                <a class="index_share-link" href="https://twitter.com/intent/tweet?text=Fantasy-Land&url=http://monkingxue.github.io/&via=嘤嘤" target="_blank">
-                    <li class="mdl-menu__item mdl-js-ripple-effect">
-                        分享到 Twitter
-                    </li>
-                </a>
-            
+    
+        
+            <!-- Busuanzi Views -->
+            <a class="post_share-link" href="#">
+                <li class="mdl-menu__item">
+                    <span id="busuanzi_container_page_pv">
+                        <span id="busuanzi_value_page_pv"></span>&nbsp;浏览量
+                    </span>
+                </li>
+            </a>
+        
+    
 
-            
-                <a class="index_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://monkingxue.github.io/index.html" target="_blank">
-                    <li class="mdl-menu__item mdl-js-ripple-effect">
-                        分享到 Facebook
-                    </li>
-                </a>
-            
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=菜鸡的lambda演算入门笔记（一）&url=http://monkingxue.github.io/2017/06/17/菜鸡的lambda演算入门笔记/index.html&pic=&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
 
-            
-                <a class="index_share-link" href="https://plus.google.com/share?url=http://monkingxue.github.io/" target="_blank">
-                    <li class="mdl-menu__item mdl-js-ripple-effect">
-                        分享到 Google+
-                    </li>
-                </a>
-            
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=菜鸡的lambda演算入门笔记（一）&url=http://monkingxue.github.io/2017/06/17/菜鸡的lambda演算入门笔记/index.html&via=嘤嘤" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
 
-            
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://monkingxue.github.io/2017/06/17/菜鸡的lambda演算入门笔记/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
 
-            
-                <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Fantasy-Land&title=Fantasy-Land&summary=null&pics=http://monkingxue.github.io/img/favicon.png&url=http://monkingxue.github.io/" target="_blank">
-                    <li class="mdl-menu__item">
-                        分享到 QQ
-                    </li>
-                </a>
-            
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://monkingxue.github.io/2017/06/17/菜鸡的lambda演算入门笔记/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
 
-            
-        </ul>
-    </div>
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Fantasy-Land&title=菜鸡的lambda演算入门笔记（一）&summary=null&pics=http://monkingxue.github.io/img/favicon.png&url=http://monkingxue.github.io/2017/06/17/菜鸡的lambda演算入门笔记/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
 </div>
 
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-    <div class="locate-thumbnail-symbol"></div>
-
-    <!-- Pin on top -->
-    
-
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        <!-- Custom Thumbnail -->
-        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50 lazy" data-original="/img/菜鸡的lambda演算入门笔记.jpg">
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/06/17/菜鸡的lambda演算入门笔记/">菜鸡的lambda演算入门笔记（一）</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            一点废话
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/06/17/菜鸡的lambda演算入门笔记/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="嘤嘤's avatar">
-            </div>
-            <div>
-                <strong>嘤嘤</strong>
-                <span>6月 17, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/Functional-Programming/">Functional Programming</a>
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        <!-- Custom Thumbnail -->
-        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50 lazy" data-original="/img/暑期阿里面试总结.jpg">
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/06/17/暑期阿里面试总结/">暑期阿里面试总结</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            ...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/06/17/暑期阿里面试总结/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="嘤嘤's avatar">
-            </div>
-            <div>
-                <strong>嘤嘤</strong>
-                <span>6月 17, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/Interview/">Interview</a>
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        <!-- Custom Thumbnail -->
-        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50 lazy" data-original="/img/关于博客.jpg">
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/06/17/关于博客/">关于博客</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            像我这样的懒癌患者，开博客实在是一件不容易的事情，而且还要坚持写下来，简直是一派胡言了。不过我有一...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/06/17/关于博客/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="嘤嘤's avatar">
-            </div>
-            <div>
-                <strong>嘤嘤</strong>
-                <span>6月 17, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/Talk/">Talk</a>
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        <!-- Custom Thumbnail -->
-        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50 lazy" data-original="/img/谈一谈type和kind.jpg">
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/06/17/谈一谈type和kind/">谈一谈 type 和 kind</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            这个坑过两天来填，不急。
-
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/06/17/谈一谈type和kind/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="嘤嘤's avatar">
-            </div>
-            <div>
-                <strong>嘤嘤</strong>
-                <span>6月 17, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/Type-System/">Type System</a>
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
+        <h2 id="一点废话"><a href="#一点废话" class="headerlink" title="一点废话"></a>一点废话</h2><blockquote>
+<p>我明明是一个搞前端的啊😑</p>
+</blockquote>
+<p>其实接触到 lambda 演算这种<strong>神神道道</strong>的东西也不是第一次了，然而现在回头看这一路的<strong>歪门邪道</strong>，不禁唏嘘万千。</p>
+<p>最早的是一年前接触 React，这还很正常，然后就是 Redux，也没什么毛病，但是之后就跑偏了。React 社区内天天高举着 Functional 的大旗，搞得我心猿意马，去年暑假跑去强学了一波 Haskell 失败了，但是心有不甘，兴趣点却从 FP 转到了 PL。之后就去学了波 Scheme，然后就是 clojure、Go、Kotlin（那个时候 Kotlin 还不火），顺道还跑去看了看 elixir（毕竟 Coding 内部硬点的），都是了解一下皮毛。大二下学期回来就搞得比较杂了，为了在知乎上混下去写一手 parser，为了混个面试看了看 JS 的 spec，后来认识了冰封一帮聚聚，为了刷 CW 就回头学一手 Haskell，这样来说学 lambda 演算也就是顺水推舟的事情了（终于圆回来了…）。不过学一点这种东西除了能够和聚聚欢快吹*以外，对于理解别的东西还是有点好处的，好歹以后  JS 出个新的 feature 就不会怎么特别激动了（摊手）。</p>
+<p>这次的博客内容参考的是<a href="http://goodmath.blogspot.com/2006/05/my-favorite-calculus-lambda-part-1.html" target="_blank" rel="external">我最爱的 lambda 演算</a>，算是一个翻译加上点自己的理解了。</p>
+<h2 id="什么是-lambda-演算？"><a href="#什么是-lambda-演算？" class="headerlink" title="什么是 lambda 演算？"></a>什么是 lambda 演算？</h2><p>在谈论什么是 lambda 演算之前，我们先说一下 lambda。熟悉 Python 的同学现在肯定很鸡冻：“诶这个我知道！不就是匿名函数嘛！” 要我说，你们啊，too young！这里的 lambda 和 Python 中的匿名函数的关键字 lamba 不一样的哦，但是 lambda 确实都包含了函数的含义。</p>
+<p>回到 lambda 演算，这是一套用于研究函数定义、函数应用和递归的<a href="https://zh.wikipedia.org/wiki/%E5%BD%A2%E5%BC%8F%E7%B3%BB%E7%BB%9F" target="_blank" rel="external">形式系统</a>，是由著名的邱奇聚聚引入的，当然，它也可以被称为最小的通用程序设计语言。这里是不是有点晕？没事，让我们先来看看 lambda 演算的语法。</p>
+<h2 id="lambda-演算的语法"><a href="#lambda-演算的语法" class="headerlink" title="lambda 演算的语法"></a>lambda 演算的语法</h2><p>Lambda演算只有三类表达式：</p>
+<ol>
+<li>函数定义：Lambda 演算中的函数是一个表达式，写成：<code>lambda x . body</code>，表示“存在一个参数为<code>x</code>的函数，它的返回值为<code>body</code>的计算结果。” 这时我们说：Lambda 表达式绑定了参数<code>x</code>。</li>
+<li>标识符引用（Identifier reference）：标识符引用就是一个名字，这个名字用于匹配函数表达式中的某个参数名。</li>
+<li>函数应用（Function application）：函数应用写成把函数值放到它的参数前面的形式，如<code>(lambda x . plus x x) y</code>。</li>
+</ol>
+<p>上面的这三条很好理解，不过我们会发现这里的函数有个问题：它的参数只有一个，这就有点麻爪了，比如一个 简单的 Number 的 plus 函数就要求有两个参数，这该怎么利用 lambda 演算实现呢？没错，就是柯里化。</p>
+<h3 id="柯里化（Currying）"><a href="#柯里化（Currying）" class="headerlink" title="柯里化（Currying）"></a>柯里化（Currying）</h3><p>首先，你需要有这样的一个概念：函数即是值。你可以写只有一个参数的函数，而这个函数返回一个带一个参数的函数，这样就可以实现写两个参数的函数了——本质上两者是一样的。这就是所谓的柯里化（Currying），以伟大的逻辑学家Haskell Curry命名（你是不是觉得他的 Haskell 也有点眼熟）。</p>
+<p>例如上面提到的 plus 函数。我们比较习惯写成类似：<code>lambda x y . plus x y</code>之类的东西。而采用单参函数的写法是：我们写一个只有一个参数的函数，让它返回另一个只有一个参数的函数。于是<code>x + y</code>就变成一个单参数<code>x</code>的函数，它返回另一个函数，这个函数将<code>x</code>加到它自己的参数上：</p>
+<pre class=" language-lisp"><code class="language-lisp">lambda x. ( lambda y. plus x y )
+</code></pre>
+<p>现在我们知道，添加多个参数的函数并没有添加任何东西，只不过简化了语法，所以下面继续介绍的时候，我会在方便的时候用到多参数函数。</p>
+<h3 id="自由标识符-vs-绑定标识符"><a href="#自由标识符-vs-绑定标识符" class="headerlink" title="自由标识符 vs. 绑定标识符"></a>自由标识符 vs. 绑定标识符</h3><p>有一个重要的语法问题我还没有提到：闭包（closure）或者叫完全绑定（complete binding）。在对一个 Lambda 演算表达式进行求值的时候，不能引用任何未绑定的标识符。如果一个标识符是一个闭合Lambda表达式的参数，我们则称这个标识符是（被）绑定的；如果一个标识符在任何封闭上下文中都没有绑定，那么它被称为自由变量。</p>
+<ul>
+<li><code>lambda x . plus x y</code>：在这个表达式中，<code>y</code>和<code>plus</code>是自由的，因为他们不是任何闭合的Lambda表达式的参数；而<code>x</code>是绑定的，因为它是函数定义的闭合表达式<code>plus x y</code>的参数。</li>
+<li><code>lambda x y . y x</code> ：在这个表达式中<code>x</code>和<code>y</code>都是被绑定的，因为它们都是函数定义中的参数。</li>
+<li><code>lambda y . (lambda x . plus x y)</code>：在内层演算<code>lambda x . plus x y</code>中，<code>y</code>和<code>plus</code>是自由的，<code>x</code>是绑定的。在完整表达中，<code>x</code>和<code>y</code>是绑定的：<code>x</code>受内层绑定，而<code>y</code>由剩下的演算绑定。<code>plus</code>仍然是自由的。</li>
+</ul>
+<p>我们经常会使用<code>free(x)</code>来表示在表达式<code>x</code>中自由的标识符。</p>
+<p>一个Lambda演算表达式只有在其所有变量都是绑定的时候才完全合法。但是，当我们脱开上下文，关注于一个复杂表达式的子表达式时，自由变量是允许存在的——这时候搞清楚子表达式中的哪些变量是自由的就显得非常重要了。</p>
+<blockquote>
+<p>一句话总结：在一个封闭的函数作用域内，只要出现了非参数的变量，那这个变量就是自由变量</p>
+</blockquote>
+<h2 id="Lambda-演算的运算法则"><a href="#Lambda-演算的运算法则" class="headerlink" title="Lambda 演算的运算法则"></a>Lambda 演算的运算法则</h2><p>Lambda演算只有两条真正的法则：Alpha和Beta。Alpha也被称为「转换」，Beta也被称为「规约」。</p>
+<h3 id="Alpha-转换"><a href="#Alpha-转换" class="headerlink" title="Alpha 转换"></a>Alpha 转换</h3><p>Alpha是一个重命名操作; 基本上就是说，变量的名称是不重要的：给定Lambda演算中的任意表达式，我们可以修改函数参数的名称，只要我们同时修改函数体内所有对它的自由引用。</p>
+<p>所以 —— 例如，如果有这样一个表达式：</p>
+<pre class=" language-lisp"><code class="language-lisp">lambda x . if (= x 0) then 1 else x ^ 2
+</code></pre>
+<p>我们可以用Alpha转换，将<code>x</code>变成<code>y</code>（写作<code>alpha[x / y]</code>），于是我们有：</p>
+<pre class=" language-lisp"><code class="language-lisp">lambda y . if (= y 0) then 1 else y ^ 2
+</code></pre>
+<p>这样并不会改变整个表达式的含义。但是，这一点非常重要，因为它使我们可以实现诸如递归之类的事情（对就是那个 Y combinator）。</p>
+<blockquote>
+<p>换个马甲还是你</p>
+</blockquote>
+<h3 id="Beta-规约"><a href="#Beta-规约" class="headerlink" title="Beta 规约"></a>Beta 规约</h3><p>Beta 规约才是精彩的地方，这条规则使得 Lambda 演算能够执行任何可以由机器来完成的计算。</p>
+<p>Beta 基本上是说，如果你有一个函数应用，你可以对这个函数体中和对应函数标识符相关的部分做替换，替换方法是把<strong>标识符</strong>用<strong>参数值</strong>替换。这听起来很费解，但是它用起来却很容易。</p>
+<p>假设我们有一个函数应用表达式：“ <code>(lambda x . x + 1) 3</code> “ 。所谓 Beta 规约就是，我们可以通过替换函数体（即“<code>x + 1</code>”）来实现函数应用，用数值 “<code>3</code>” 取代引用的参数 “<code>x</code>”。于是 Beta 规约的结果就是 “<code>3 + 1</code>”。</p>
+<p>一个稍微复杂的例子：<code>(lambda y . (lambda x . x + y)) q</code>。 这是一个挺有意思的表达式，因为应用这个Lambda表达式的结果是另一个Lambda表达式：也就是说，它是一个创建函数的函数。这时候的Beta规约，需要用标识符“<code>q</code>”替换所有的引用参数“<code>y</code>”。所以，其结果是“ <code>lambda x . x + q</code>“。</p>
+<p>再给一个让你更不爽的例子：“ <code>(lambda x y. x y) (lambda z . z * z) 3</code> “。这是一个有两个参数的函数，它(的功能是)把第一个参数应用到第二个参数上。当我们运算时，我们替换第一个函数体中的参数 “<code>x</code>” 为 “<code>lambda z . z * z</code> “；然后我们用 “<code>3</code>” 替换参数 “<code>y</code>”，得到：“ <code>(lambda z . z * z) 3</code> “。 再执行Beta规约，有 “<code>3 * 3</code>”。</p>
+<p>Beta规则的形式化写法为：</p>
+<pre class=" language-lisp"><code class="language-lisp">lambda x . B e = B[x := e] if free(e) subset free(B[x := e])
+</code></pre>
+<p>最后的条件 <code>if free(e) subset free(B[x := e])</code> 说明了为什么我们需要 Alpha 转换：我们只有在不引起绑定标识符和自由标识符之间的任何冲突的情况下，才可以做Beta规约：如果标识符 <code>z</code> 在 <code>e</code> 中是自由的，那么我们就需要确保，Beta规约不会导致 <code>z</code> 变成绑定的。如果在 <code>B</code> 中绑定的变量和 <code>e</code> 中的自由变量产生命名冲突，我们就需要用 Alpha 转换来更改标识符名称，确保使之不同。</p>
+<blockquote>
+<p>上面这段话我看得脑阔子也疼，那不如看看👇的例子吧。</p>
+</blockquote>
+<p>举个🌰：假设我们有这样一个函数表达式， <code>lambda z . (lambda x . x + z)</code>，现在，我们要调用它：</p>
+<pre class=" language-lisp"><code class="language-lisp">(lambda z . (lambda x . x + z)) (x + 2)
+</code></pre>
+<p>在参数 <code>(x + 2)</code> 中，<code>x</code> 是自由的（因为在当前的上下文中，<code>x</code> 不是函数参数）。现在，假设我们不遵守规则直接做 Beta 规约。我们会得到：</p>
+<pre class=" language-lisp"><code class="language-lisp">lambda x . x + x + 2
+</code></pre>
+<p>原先在 <code>x + 2</code> 中的自由变量现在被绑定（变成 lambda 中的参数）了。假设我们再调用该函数：</p>
+<pre class=" language-lisp"><code class="language-lisp">(lambda x . x + x + 2) 3
+</code></pre>
+<p>通过 Beta 规约，我们会得到 <code>3 + 3 + 2</code> 。</p>
+<p>如果我们按照应有的方式先采用 Alpha 转换，又该如何？</p>
+<ul>
+<li>由 <code>alpha[x/y]</code> 有： <code>(lambda z . (lambda y . y + z)) (x + 2)</code></li>
+<li>由 Beta 规约： <code>(lambda y . y + x + 2) 3</code></li>
+<li>再由 Beta 规约： <code>3 + x + 2</code> </li>
+</ul>
+<p><code>3 + x + 2</code> 和 <code>3 + 3 + 2</code> 是完全不同的结果！</p>
+<blockquote>
+<p>说白了，这里的 β 规约就是把参数带入函数并展开（注意没计算），也就是定义了<strong>在 lambda 演算中</strong>函数调用的方式，所以才说 β 规约是非常重要的。不过注意，这里的 β 规约和我们一些常见的编程语言中的函数调用并不相同，哦如果你说的是 Haskell 那确实是差不多的（大雾</p>
+</blockquote>
+<p>原文中对于 Eta-变换一带而过，我这里就顺便记录一下吧。</p>
+<h3 id="Eta-变换"><a href="#Eta-变换" class="headerlink" title="Eta 变换"></a>Eta 变换</h3><p>η 变换表达的是一种外延性的概念，在这里外延性指的是，两个函数对于所有的参数得到的结果一致，当且仅当它们是同一个函数，η 变换可以令 <code>lambda x . f x</code> 和 <code>f</code> 相互交换，只要 <code>x</code> 不是 <code>f</code> 中的自由标识符。它的应用也比较常见，比如消除冗余的 lambda 表达（啊没错就是喜闻乐见人人喊打的 point-free）。</p>
+<p>还是来举个🌰吧，如果我们有一个计算加2的和的函数如下：</p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">let</span> sum <span class="token operator">=</span> <span class="token punctuation">(</span>lambda x y <span class="token punctuation">.</span> plus x y<span class="token punctuation">)</span>
+</code></pre>
+<p>而 plus 的定义也很简单：</p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">let</span> plus <span class="token operator">=</span> <span class="token punctuation">(</span>lambda x y <span class="token punctuation">.</span> <span class="token operator">+</span> x y<span class="token punctuation">)</span>
+</code></pre>
+<p>那很明显，我们这里的 <code>plus</code> 函数和 <code>sum</code> 是<strong>外延相等</strong>的，所以我们可以直接这么定义 <code>sum</code>：</p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">let</span> sum <span class="token operator">=</span> plus
+</code></pre>
+<p>一下子就简单了有木有！</p>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>这次主要是记录一下 lambda 演算的基础知识，甚至连简单的模型都没有提到，溜了溜了。 </p>
 
     
-
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
-    $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
-    }
-</script>
 
     
 </div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2017/06/17/暑期阿里面试总结/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     
@@ -1029,12 +936,6 @@ It will not impact the appearance and can give developers a lot of support :)
 
 
 
-
-    <!-- Swiftye -->
-    
-
-    <!-- Local Search-->
-    
 
 
 <!-- UC Browser Compatible -->
