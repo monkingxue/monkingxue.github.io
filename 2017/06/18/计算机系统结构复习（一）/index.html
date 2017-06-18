@@ -12,7 +12,7 @@
     
     <title>
         
-            分类: Type System | 
+            计算机系统结构复习（一） | 
         
         Fantasy-Land
     </title>
@@ -38,7 +38,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="嘤嘤">
     <meta name="description" itemprop="description" content="">
-    <meta name="keywords" content="web code programmer software">
+    <meta name="keywords" content="web code programmer software,Computer Architecture">
 
     <!-- Site Verification -->
     
@@ -67,15 +67,18 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://monkingxue.github.io">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="分类: Type System | Fantasy-Land">
+    <meta property="og:title" content="计算机系统结构复习（一） | Fantasy-Land">
     <meta property="og:image" content="/img/favicon.png" />
     <meta property="og:description" content="">
-    
+    <meta property="og:article:tag" content="Computer Architecture"> 
 
+    
+        <meta property="article:published_time" content="Sun Jun 18 2017 13:09:27 GMT+0800" />
+        <meta property="article:modified_time" content="Sun Jun 18 2017 14:36:08 GMT+0800" />
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="分类: Type System | Fantasy-Land">
+    <meta name="twitter:title" content="计算机系统结构复习（一） | Fantasy-Land">
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content="/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
@@ -83,13 +86,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://monkingxue.github.io/categories/Type-System/index.html" />
+        <link rel="canonical" href="http://monkingxue.github.io/2017/06/18/计算机系统结构复习（一）/index.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Fantasy-Land",
+        "logo": "/img/favicon.png"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "嘤嘤",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/favicon.png"
+        },
+        "description": "这个人很懒，什么都不想写"
+    },
+    "headline": "计算机系统结构复习（一）",
+    "url": "http://monkingxue.github.io/2017/06/18/计算机系统结构复习（一）/index.html",
+    "datePublished": "Sun Jun 18 2017 13:09:27 GMT+0800",
+    "dateModified": "Sun Jun 18 2017 14:36:08 GMT+0800",
+    "description": "",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://monkingxue.github.io"
+    }
+}
+</script>
 
 
     
@@ -272,95 +305,367 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#引言"><span class="post-toc-number">1.</span> <span class="post-toc-text">引言</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-第一台通用电子计算机诞生于1946年（这么看来计算机确实是一门新兴学科了）"><span class="post-toc-number">1.0.1.</span> <span class="post-toc-text">1.第一台通用电子计算机诞生于1946年（这么看来计算机确实是一门新兴学科了）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-计算机技术的飞速发展得益于两个方面"><span class="post-toc-number">1.0.2.</span> <span class="post-toc-text">2.计算机技术的飞速发展得益于两个方面</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3-经历了4个发展过程"><span class="post-toc-number">1.0.3.</span> <span class="post-toc-text">3.经历了4个发展过程</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#4-系统结构的重大转折"><span class="post-toc-number">1.0.4.</span> <span class="post-toc-text">4.系统结构的重大转折</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#计算机系统结构的概念"><span class="post-toc-number">2.</span> <span class="post-toc-text">计算机系统结构的概念</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#计算机系统的层次结构"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">计算机系统的层次结构</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#计算机系统＝硬件-固件＋软件"><span class="post-toc-number">2.1.1.</span> <span class="post-toc-text">计算机系统＝硬件/固件＋软件</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#计算机语言从低级向高级发展"><span class="post-toc-number">2.1.2.</span> <span class="post-toc-text">计算机语言从低级向高级发展</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#从计算机语言的角度，把计算机系统按功能划分成多级层次结构"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">从计算机语言的角度，把计算机系统按功能划分成多级层次结构</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#每一层以一种语言为特征"><span class="post-toc-number">2.2.1.</span> <span class="post-toc-text">每一层以一种语言为特征</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#虚拟机：由软件实现的机器"><span class="post-toc-number">2.2.2.</span> <span class="post-toc-text">虚拟机：由软件实现的机器</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#语言实现的两种基本技术"><span class="post-toc-number">2.2.3.</span> <span class="post-toc-text">语言实现的两种基本技术</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#计算机系统结构的定义"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">计算机系统结构的定义</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#计算机系统结构的经典定义"><span class="post-toc-number">2.3.1.</span> <span class="post-toc-text">计算机系统结构的经典定义</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#按照计算机系统的多级层次结构，不同级程序员所看到的计算机具有不同的属性。"><span class="post-toc-number">2.3.2.</span> <span class="post-toc-text">按照计算机系统的多级层次结构，不同级程序员所看到的计算机具有不同的属性。</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#透明性"><span class="post-toc-number">2.3.3.</span> <span class="post-toc-text">透明性</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Amdahl提出的系统结构"><span class="post-toc-number">2.3.4.</span> <span class="post-toc-text">Amdahl提出的系统结构</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#广义的系统结构定义"><span class="post-toc-number">2.3.5.</span> <span class="post-toc-text">广义的系统结构定义</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#对于通用寄存器型机器来说，这些属性主要是（略）"><span class="post-toc-number">2.3.6.</span> <span class="post-toc-text">对于通用寄存器型机器来说，这些属性主要是（略）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#计算机系统结构概念的实质"><span class="post-toc-number">2.3.7.</span> <span class="post-toc-text">计算机系统结构概念的实质</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#计算机组成和计算机实现"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">计算机组成和计算机实现</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#计算机系统结构：计算机系统的软、硬件的界面"><span class="post-toc-number">2.4.1.</span> <span class="post-toc-text">计算机系统结构：计算机系统的软、硬件的界面</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#计算机组成"><span class="post-toc-number">2.4.2.</span> <span class="post-toc-text">计算机组成</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#计算机实现：计算机组成的物理实现"><span class="post-toc-number">2.4.3.</span> <span class="post-toc-text">计算机实现：计算机组成的物理实现</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#计算机系统结构的分类"><span class="post-toc-number">2.5.</span> <span class="post-toc-text">计算机系统结构的分类</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#常见的计算机系统结构分类法有两种：Flynn分类法、冯氏分类法"><span class="post-toc-number">2.5.0.1.</span> <span class="post-toc-text">常见的计算机系统结构分类法有两种：Flynn分类法、冯氏分类法</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#冯氏分类法"><span class="post-toc-number">2.5.1.</span> <span class="post-toc-text">冯氏分类法</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Flynn分类法"><span class="post-toc-number">2.5.2.</span> <span class="post-toc-text">Flynn分类法</span></a></li></ol></li></ol></li></ol>
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
     
 
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
     
         <!-- Custom Thumbnail -->
-        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50 lazy" data-original="/img/谈一谈type和kind.jpg">
+        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(/img/计算机系统结构复习（一）.jpg)">
+    
+            <p class="article-headline-p">
+                计算机系统结构复习（一）
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>嘤嘤</strong>
+        <span>6月 18, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
     
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/06/17/谈一谈type和kind/">谈一谈 type 和 kind</a></p>
-    </div>
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/Computer-Architecture/">Computer Architecture</a>
+    </ul>
+    
 
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
         
-            这个坑过两天来填，不急。
-
+            <!-- Busuanzi Views -->
+            <a class="post_share-link" href="#">
+                <li class="mdl-menu__item">
+                    <span id="busuanzi_container_page_pv">
+                        <span id="busuanzi_value_page_pv"></span>&nbsp;浏览量
+                    </span>
+                </li>
+            </a>
         
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/06/17/谈一谈type和kind/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="嘤嘤's avatar">
-            </div>
-            <div>
-                <strong>嘤嘤</strong>
-                <span>6月 17, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/Type-System/">Type System</a>
-            </span>
+    
 
-            
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=计算机系统结构复习（一）&url=http://monkingxue.github.io/2017/06/18/计算机系统结构复习（一）/index.html&pic=&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
 
-            
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=计算机系统结构复习（一）&url=http://monkingxue.github.io/2017/06/18/计算机系统结构复习（一）/index.html&via=嘤嘤" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
 
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://monkingxue.github.io/2017/06/18/计算机系统结构复习（一）/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://monkingxue.github.io/2017/06/18/计算机系统结构复习（一）/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Fantasy-Land&title=计算机系统结构复习（一）&summary=null&pics=http://monkingxue.github.io/img/favicon.png&url=http://monkingxue.github.io/2017/06/18/计算机系统结构复习（一）/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
 </div>
 
-            
-            
-        
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
+        <blockquote>
+<p>考试周防不胜防地来了，为了防止翻车，先鸽一下之前的 lambda 演算系列，跑步进入复习阶段。</p>
+<p>今天的主题是：计算机系统结构的基本概念</p>
+</blockquote>
+<h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><h4 id="1-第一台通用电子计算机诞生于1946年（这么看来计算机确实是一门新兴学科了）"><a href="#1-第一台通用电子计算机诞生于1946年（这么看来计算机确实是一门新兴学科了）" class="headerlink" title="1.第一台通用电子计算机诞生于1946年（这么看来计算机确实是一门新兴学科了）"></a>1.第一台通用电子计算机诞生于1946年（这么看来计算机确实是一门新兴学科了）</h4><h4 id="2-计算机技术的飞速发展得益于两个方面"><a href="#2-计算机技术的飞速发展得益于两个方面" class="headerlink" title="2.计算机技术的飞速发展得益于两个方面"></a>2.计算机技术的飞速发展得益于两个方面</h4><ul>
+<li>计算机制造技术的发展</li>
+<li>计算机系统结构的创新</li>
+</ul>
+<h4 id="3-经历了4个发展过程"><a href="#3-经历了4个发展过程" class="headerlink" title="3.经历了4个发展过程"></a>3.经历了4个发展过程</h4><table>
+<thead>
+<tr>
+<th style="text-align:center">时  间</th>
+<th style="text-align:center">原因</th>
+<th style="text-align:center">每年的性能增长</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1946年起的25年</td>
+<td style="text-align:center">两种因素都起着主要的作用</td>
+<td style="text-align:center">25%</td>
+</tr>
+<tr>
+<td style="text-align:center">20世纪70年代末－80年代初</td>
+<td style="text-align:center">大规模集成电路和微处理器出现，以集成电路为代表的制造技术的发展</td>
+<td style="text-align:center">约35%</td>
+</tr>
+<tr>
+<td style="text-align:center">20世纪80年代中开始</td>
+<td style="text-align:center">RISC结构的出现，系统结构不断更新和变革，制造技术不断发展</td>
+<td style="text-align:center">50%以上维持了约16年</td>
+</tr>
+<tr>
+<td style="text-align:center">2002年以来</td>
+<td style="text-align:center">功耗问题（已经很大）， 可以进一步有效开发的指令级并行性已经很少， 存储器访问速度的提高缓慢</td>
+<td style="text-align:center">约20%</td>
+</tr>
+</tbody>
+</table>
+<h4 id="4-系统结构的重大转折"><a href="#4-系统结构的重大转折" class="headerlink" title="4.系统结构的重大转折"></a>4.系统结构的重大转折</h4><p>从单纯依靠<strong>指令级并行</strong>转向开发<strong>线程级并行</strong>和<strong>数据级并行</strong>。</p>
+<blockquote>
+<p>这一块我是很感兴趣的，然而现在先按下不表</p>
+</blockquote>
+<h2 id="计算机系统结构的概念"><a href="#计算机系统结构的概念" class="headerlink" title="计算机系统结构的概念"></a>计算机系统结构的概念</h2><ol>
+<li><h3 id="计算机系统的层次结构"><a href="#计算机系统的层次结构" class="headerlink" title="计算机系统的层次结构"></a>计算机系统的层次结构</h3><ol>
+<li><h4 id="计算机系统＝硬件-固件＋软件"><a href="#计算机系统＝硬件-固件＋软件" class="headerlink" title="计算机系统＝硬件/固件＋软件"></a>计算机系统＝硬件/固件＋软件</h4><blockquote>
+<p>联想到「程序 = 算法 + 数据结构」</p>
+</blockquote>
+</li>
+<li><h4 id="计算机语言从低级向高级发展"><a href="#计算机语言从低级向高级发展" class="headerlink" title="计算机语言从低级向高级发展"></a>计算机语言从低级向高级发展</h4><blockquote>
+<p>高一级语言的语句相对于低一级语言来说功能更强，更便于应用，但又都以低级语言为基础。 其实我们接触到了大多</p>
+</blockquote>
+</li>
+<li><h3 id="从计算机语言的角度，把计算机系统按功能划分成多级层次结构"><a href="#从计算机语言的角度，把计算机系统按功能划分成多级层次结构" class="headerlink" title="从计算机语言的角度，把计算机系统按功能划分成多级层次结构"></a>从计算机语言的角度，把计算机系统按功能划分成多级层次结构</h3><ul>
+<li><h4 id="每一层以一种语言为特征"><a href="#每一层以一种语言为特征" class="headerlink" title="每一层以一种语言为特征"></a>每一层以一种语言为特征</h4><img src="/2017/06/18/计算机系统结构复习（一）/语言特征.png" alt="语言特征" title="语言特征">
+</li>
+<li><h4 id="虚拟机：由软件实现的机器"><a href="#虚拟机：由软件实现的机器" class="headerlink" title="虚拟机：由软件实现的机器"></a>虚拟机：由软件实现的机器</h4></li>
+<li><h4 id="语言实现的两种基本技术"><a href="#语言实现的两种基本技术" class="headerlink" title="语言实现的两种基本技术"></a>语言实现的两种基本技术</h4><ol>
+<li><p>翻译：先把 N+1 级程序全部转换成N级程序后，再去执行新产生的 N 级程序，在执行过程中 N+1 级程序不再被访问。 </p>
+</li>
+<li><p>解释：每当一条 N+1 级指令被译码后，就直接去执行一串等效的 N 级指令，然后再去取下一条 N+1 级的指令，依此重复进行。</p>
+<blockquote>
+<p>当然现在还有 gradual 的，比如 Java，当然 JS 在 V8 下也是这个样子</p>
+</blockquote>
+<p>解释执行比编译后再执行所花的时间多，但占用的存储空间较少。</p>
+<blockquote>
+<p>联想到 V8 加入的 Ignition，这是一个字节码解释器，就是为了降低原先的 JIT 编译器把所有代码都编译成机器码的内存占用成本。把 Ignition 和 TurboFan 组合在一起，就是字节码解释器 + JIT 编译器的黄金组合。</p>
+</blockquote>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><h3 id="计算机系统结构的定义"><a href="#计算机系统结构的定义" class="headerlink" title="计算机系统结构的定义"></a>计算机系统结构的定义</h3><ol>
+<li><h4 id="计算机系统结构的经典定义"><a href="#计算机系统结构的经典定义" class="headerlink" title="计算机系统结构的经典定义"></a>计算机系统结构的经典定义</h4><p>程序员所看到的计算机属性，即概念性结构与功能特性。</p>
+</li>
+<li><h4 id="按照计算机系统的多级层次结构，不同级程序员所看到的计算机具有不同的属性。"><a href="#按照计算机系统的多级层次结构，不同级程序员所看到的计算机具有不同的属性。" class="headerlink" title="按照计算机系统的多级层次结构，不同级程序员所看到的计算机具有不同的属性。"></a>按照计算机系统的多级层次结构，不同级程序员所看到的计算机具有不同的属性。</h4></li>
+<li><h4 id="透明性"><a href="#透明性" class="headerlink" title="透明性"></a>透明性</h4><p>在计算机技术中，把这种本来存在的事物或属性，但从某种角度看又好像不存在的概念称为透明性。</p>
+<blockquote>
+<p>联想到透明引用，zero-cost abstract 这些东西</p>
+</blockquote>
+</li>
+<li><h4 id="Amdahl提出的系统结构"><a href="#Amdahl提出的系统结构" class="headerlink" title="Amdahl提出的系统结构"></a>Amdahl提出的系统结构</h4><p>传统机器语言级程序员所看到的计算机属性。</p>
+</li>
+<li><h4 id="广义的系统结构定义"><a href="#广义的系统结构定义" class="headerlink" title="广义的系统结构定义"></a>广义的系统结构定义</h4><p>指令集结构、组成、硬件（计算机设计的3个方面）</p>
+</li>
+<li><h4 id="对于通用寄存器型机器来说，这些属性主要是（略）"><a href="#对于通用寄存器型机器来说，这些属性主要是（略）" class="headerlink" title="对于通用寄存器型机器来说，这些属性主要是（略）"></a>对于通用寄存器型机器来说，这些属性主要是（略）</h4></li>
+<li><h4 id="计算机系统结构概念的实质"><a href="#计算机系统结构概念的实质" class="headerlink" title="计算机系统结构概念的实质"></a>计算机系统结构概念的实质</h4><p><strong>确定计算机系统中软、硬件的界面，界面之上是软件实现的功能，界面之下是硬件和固件实现的功能。</strong></p>
+</li>
+</ol>
+</li>
+<li><h3 id="计算机组成和计算机实现"><a href="#计算机组成和计算机实现" class="headerlink" title="计算机组成和计算机实现"></a>计算机组成和计算机实现</h3><ol>
+<li><h4 id="计算机系统结构：计算机系统的软、硬件的界面"><a href="#计算机系统结构：计算机系统的软、硬件的界面" class="headerlink" title="计算机系统结构：计算机系统的软、硬件的界面"></a>计算机系统结构：计算机系统的软、硬件的界面</h4><p>是机器语言程序员所看到的传统机器级所具有的属性。 </p>
+</li>
+<li><h4 id="计算机组成"><a href="#计算机组成" class="headerlink" title="计算机组成"></a>计算机组成</h4><ol>
+<li>包含物理机器级中的数据流和控制流的组成以及逻辑设计等。</li>
+<li>着眼于物理机器级内各事件的排序方式与控制方式、各部件的功能以及各部件之间的联系。</li>
+</ol>
+</li>
+<li><h4 id="计算机实现：计算机组成的物理实现"><a href="#计算机实现：计算机组成的物理实现" class="headerlink" title="计算机实现：计算机组成的物理实现"></a>计算机实现：计算机组成的物理实现</h4><ol>
+<li>包括处理机、主存等部件的物理结构，器件的集成度和速度，模块、插件、底板的划分与连接，信号传输，电源、冷却及整机装配技术等。</li>
+<li>着眼于：器件技术（起主导作用）、微组装技术。</li>
+<li><strong>一种体系结构可以有多种组成， 一种组成可以有多种物理实现。</strong></li>
+</ol>
+</li>
+</ol>
+</li>
+<li><h3 id="计算机系统结构的分类"><a href="#计算机系统结构的分类" class="headerlink" title="计算机系统结构的分类"></a>计算机系统结构的分类</h3><blockquote>
+<h5 id="常见的计算机系统结构分类法有两种：Flynn分类法、冯氏分类法"><a href="#常见的计算机系统结构分类法有两种：Flynn分类法、冯氏分类法" class="headerlink" title="常见的计算机系统结构分类法有两种：Flynn分类法、冯氏分类法"></a>常见的计算机系统结构分类法有两种：Flynn分类法、冯氏分类法</h5></blockquote>
+<ul>
+<li><h4 id="冯氏分类法"><a href="#冯氏分类法" class="headerlink" title="冯氏分类法"></a>冯氏分类法</h4><ul>
+<li><p>用系统的最大并行度对计算机进行分类。</p>
+</li>
+<li><p>最大并行度：计算机系统在单位时间内能够处理的最大的二进制位数。 </p>
+<blockquote>
+<p>用平面直角坐标系中的一个点代表一个计算机系统，其横坐标表示字宽（n位），纵坐标表示一次能同时处理的字数（m字）。m×n就表示了其最大并行度。</p>
+</blockquote>
+<img src="/2017/06/18/计算机系统结构复习（一）/冯氏分类法.png" alt="冯氏分类法" title="冯氏分类法">
+</li>
+</ul>
+</li>
+<li><h4 id="Flynn分类法"><a href="#Flynn分类法" class="headerlink" title="Flynn分类法"></a>Flynn分类法</h4><ul>
+<li>按照指令流和数据流的多倍性进行分类。</li>
+<li>指令流：计算机执行的指令序列。</li>
+<li>数据流：由指令流调用的数据序列。</li>
+<li>多倍性：在系统受限的部件上，同时处于同一执行阶段的指令或数据的最大数目。</li>
+<li>Flynn分类法把计算机系统的结构分为4类：<ul>
+<li>单指令流单数据流(SISD)</li>
+<li>单指令流多数据流(SIMD)</li>
+<li>多指令流单数据流(MISD)</li>
+<li>多指令流多数据流(MIMD)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
 
     
-
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
-    $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
-    }
-</script>
 
     
 </div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2017/06/17/菜鸡的lambda演算入门笔记/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     
