@@ -12,7 +12,7 @@
     
     <title>
         
-            分类: Interview | 
+            Oracle 的后 ACID 时代 | 
         
         Fantasy-Land
     </title>
@@ -38,7 +38,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="嘤嘤">
     <meta name="description" itemprop="description" content="">
-    <meta name="keywords" content="web code programmer software">
+    <meta name="keywords" content="web code programmer software,Database">
 
     <!-- Site Verification -->
     
@@ -67,15 +67,18 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://monkingxue.github.io">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="分类: Interview | Fantasy-Land">
+    <meta property="og:title" content="Oracle 的后 ACID 时代 | Fantasy-Land">
     <meta property="og:image" content="/img/favicon.png" />
     <meta property="og:description" content="">
-    
+    <meta property="og:article:tag" content="Database"> 
 
+    
+        <meta property="article:published_time" content="Sun Jun 25 2017 22:29:58 GMT+0800" />
+        <meta property="article:modified_time" content="Tue Jun 27 2017 21:42:04 GMT+0800" />
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="分类: Interview | Fantasy-Land">
+    <meta name="twitter:title" content="Oracle 的后 ACID 时代 | Fantasy-Land">
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content="/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
@@ -83,13 +86,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://monkingxue.github.io/categories/Interview/index.html" />
+        <link rel="canonical" href="http://monkingxue.github.io/2017/06/25/NoSQL-和-Oracle/index.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Fantasy-Land",
+        "logo": "/img/favicon.png"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "嘤嘤",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/favicon.png"
+        },
+        "description": "这个人很懒，什么都不想写"
+    },
+    "headline": "Oracle 的后 ACID 时代",
+    "url": "http://monkingxue.github.io/2017/06/25/NoSQL-和-Oracle/index.html",
+    "datePublished": "Sun Jun 25 2017 22:29:58 GMT+0800",
+    "dateModified": "Tue Jun 27 2017 21:42:04 GMT+0800",
+    "description": "",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://monkingxue.github.io"
+    }
+}
+</script>
 
 
     
@@ -272,94 +305,268 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#一点废话"><span class="post-toc-number">1.</span> <span class="post-toc-text">一点废话</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#聊聊-RDBMS"><span class="post-toc-number">2.</span> <span class="post-toc-text">聊聊 RDBMS</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#ACID-之殇"><span class="post-toc-number">3.</span> <span class="post-toc-text">ACID 之殇</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#CAP-的取舍"><span class="post-toc-number">4.</span> <span class="post-toc-text">CAP 的取舍</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Hello-BASE"><span class="post-toc-number">5.</span> <span class="post-toc-text">Hello, BASE</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#BASE-Oracle-Sharding"><span class="post-toc-number">6.</span> <span class="post-toc-text">BASE + Oracle = Sharding</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#尾声"><span class="post-toc-number">7.</span> <span class="post-toc-text">尾声</span></a></li></ol>
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
     
 
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
     
         <!-- Custom Thumbnail -->
-        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50 lazy" data-original="/img/暑期阿里面试总结.jpg">
+        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(/img/NoSQL和Oracle.jpg)">
+    
+            <p class="article-headline-p">
+                Oracle 的后 ACID 时代
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>嘤嘤</strong>
+        <span>6月 25, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
     
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/06/17/暑期阿里面试总结/">暑期阿里面试总结</a></p>
-    </div>
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/Database/">Database</a>
+    </ul>
+    
 
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
         
-            ...
+            <!-- Busuanzi Views -->
+            <a class="post_share-link" href="#">
+                <li class="mdl-menu__item">
+                    <span id="busuanzi_container_page_pv">
+                        <span id="busuanzi_value_page_pv"></span>&nbsp;浏览量
+                    </span>
+                </li>
+            </a>
         
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/06/17/暑期阿里面试总结/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="嘤嘤's avatar">
-            </div>
-            <div>
-                <strong>嘤嘤</strong>
-                <span>6月 17, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/Interview/">Interview</a>
-            </span>
+    
 
-            
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Oracle 的后 ACID 时代&url=http://monkingxue.github.io/2017/06/25/NoSQL-和-Oracle/index.html&pic=&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
 
-            
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Oracle 的后 ACID 时代&url=http://monkingxue.github.io/2017/06/25/NoSQL-和-Oracle/index.html&via=嘤嘤" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
 
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://monkingxue.github.io/2017/06/25/NoSQL-和-Oracle/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://monkingxue.github.io/2017/06/25/NoSQL-和-Oracle/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Fantasy-Land&title=Oracle 的后 ACID 时代&summary=null&pics=http://monkingxue.github.io/img/favicon.png&url=http://monkingxue.github.io/2017/06/25/NoSQL-和-Oracle/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
 </div>
 
-            
-            
-        
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
+        <h2 id="一点废话"><a href="#一点废话" class="headerlink" title="一点废话"></a>一点废话</h2><p>啊好吧最近是有点懒，没有怎么更博客。复习系列之所以没更下去是因为感觉纯看的速度更快一点 orz~最近期末复习加上 ddl 搞得我脑阔子确实比较疼，所以下一波更新可能只能等暑假了（摊手。</p>
+<p>今天之所以选择更这个，是因为正好我需要一篇数据库的小论文（真的懒，那就一箭双雕咯。</p>
+<p>👇开始</p>
+<h2 id="聊聊-RDBMS"><a href="#聊聊-RDBMS" class="headerlink" title="聊聊 RDBMS"></a>聊聊 RDBMS</h2><p>RDBMS，是关系数据库管理系统（Relational Database Management System）的简写，本文的主角 Oracle 就是 RDBMS 的一员。</p>
+<p>RDBMS 数据库具备 ACID 这一性质，我们就从这里开始讲起。ACID是 4 个单词首字母的缩写，它们分别是:Atomicity(原子性)、Consistency(一致性)、Isolation(隔离性)和 Durability(持久性)。</p>
+<p>所谓 Atomicity，是指对于数据的操作只允许“全部完成”或“完全未做改变”这两种状态中的一种，而不允许任何中间状态。因为操作无法进一步进行分割，所以用了“原子”这个词来表现。例如，银行在进行汇款操作的时候，要从 A 账户向 B 账户汇款 1 万元，假设当中由于某些原因发生中断，这时 A 账户已经扣掉 1 万元，而 B 账户中还没有存入这 1 万元，这就是一个中间状态。“从 A 账户余额中扣掉 1 万元”和“向 B 账户余额中增加 1 万元”这两个操作，如果只完成了其中一个的话，两个账户的余额就会发生矛盾。</p>
+<p>所谓 Consistency，是指数据库的状态必须永远满足给定的条件这一性质。例如，当给定“存款账户余额永远为正数”这一条件时，“取出大于账户余额的款项”这一操作就无法被执行。</p>
+<p>所谓 Isolation，是指数据库系统提供一定的隔离机制，保证事务在不受外部并发操作影响的“独立”环境执行。这意味着事务处理过程中的中间状态对外部是不可见的，反之亦然。</p>
+<p>所谓 Durability，是指当保持原子性的一系列操作完成时，其结果会被保存并且不会丢失这一性质。</p>
+<p>整体来看，ACID 非常重视数据的完整性，而 RDBMS 正是保持着这样的 ACID 特性而不断进化至今的。但近年来，要满足这样的 ACID 特性却变得越来越困难。</p>
+<h2 id="ACID-之殇"><a href="#ACID-之殇" class="headerlink" title="ACID 之殇"></a>ACID 之殇</h2><p>前面提到了近年来越来越难以满足 ACID ，这又是为什么呢？</p>
+<p>其实原因很简单——人类可以获得的信息量在持续增加。如此大量的数据无法存放在单独一块硬盘上，也无法由单独一台计算机进行处理，因此通过多台计算机的集合进行处理成为了必然的趋势。这样一来，在实际运营时就会发生延迟、故障等问题。多台计算机之间的通信需要通过网络，而网络一旦饱和就会产生延迟。比如阿里的 RPC 服务就是基于 web 的集群服务，为此阿里建立了内部的专用高速网路，并在自家的阿里云上部署了滴水不漏的防灾措施，然而就算这样，也避免不了17年年初的电缆被挖断这样的突发事件所带来的损失。</p>
+<p>当由于延迟、故障等原因导致“计算机的集合”之间的连接被切断，原本的集合就会分裂成若干个小的集合。当组成计算环境的计算机数量达到几百台以上(有些情况下甚至会达到万台规模)时，ACID 特性就很难满足，换句话说，<strong>ACID 是不可扩展的</strong>，这对于“万物皆可分布式”的当下来说简直是格格不入。</p>
+<h2 id="CAP-的取舍"><a href="#CAP-的取舍" class="headerlink" title="CAP 的取舍"></a>CAP 的取舍</h2><p>对此，有人提出了 CAP 原理，即在 <strong>大规模环境</strong> 中:</p>
+<ul>
+<li>Consistency (一致性)</li>
+<li>Availability (可用性)</li>
+<li>Partition Tolerance (分裂容忍性)</li>
+</ul>
+<p>这三个性质中，只能同时满足其中的两个。</p>
+<p>根据 CAP 原理，C（一致性）、A（可用性）和 P（分裂容忍性）这三者之中，必须要舍弃一个，那我们不妨来设身处地地分析一下，舍弃什么的沉没成本最低呢？</p>
+<p>如果舍弃分裂容忍性的话，那么只有两个选择：要么根本不会发生分裂，要么在发生分裂时能够令其中一方失效。</p>
+<p>如果根本不会发生分裂，也就意味着我们需要一台能够处理大规模数据的高性能计算机。那么，如果这台计算机发生故障，则意味着整个系统将停止运行。现代的数据规模靠一台计算机来处理是不可能完成的，因此从可扩展性的角度来看，这并不是一个有效的方案。而且别忘了，ACID 之所以难以维系就是因为其不可拓展性。</p>
+<p>此外，当发生分裂时，例如大的计算机集群被分割为多个小的集群，要区分哪一个才是“真身”也并非易事。如果准备一台主控机，以主控机所在的集群为“真身”，这的确可以做到。但是这样的中心化又会遇到上面的问题：如果主控机出现了故障该怎么办呢？</p>
+<p>那么，舍弃 A（可用性）这个选择又如何呢？这里的关键字是“等待”。也就是说，当发生分裂时，服务需要停止并等待分裂的恢复。另外，为了保持一致性，也必须等待所有数据都确实完成了记录。</p>
+<p>然而，用户到底能够等待多长时间呢？作为一个不太有耐心的用户，我等上几秒钟就开始感到烦躁了，如果几分钟都没有响应，我想我就再也不会使用这个服务了。假设分裂和延迟的原因是由于机器故障，即便是准备了完善的备份机制，想要在几秒钟之内恢复也几乎是不可能的。所以结论就是，除非是某些特殊的业务，否则是不能舍弃可用性的。</p>
+<p>那么现在就只剩下 C（一致性）了，舍弃一致性是否现实呢?</p>
+<p>可以说，数据库系统是伴随着金融业的需求而快速发展起来。对于金融业，一致性是最重要的，用户可以容忍系统故障而停止服务，但绝不能容忍帐户上的钱无故减少（当然，无故增加是可以的:-D）。而强一致性的事务是这一切的根本保证。</p>
+<p>但是仔细想想的话，除去金融业，在现实世界中严密的一致性几乎是不存在的。例如，我点了一份外卖，快递员要送给我，很明显我是不可能在下单的那一刻就瞬间拿到外卖的。快递员骑着小电驴飞奔而来，这个过程需要消耗一定的时间（<strong>无原子性</strong>）；我要是等得急了，可以用 APP 去查看一下配送到哪了（<strong>无隔离性</strong>）；如果快递员把我的外卖送错了（<strong>无一致性</strong>），哪怕我申请了退款，这次配送也不会凭空消失。</p>
+<h2 id="Hello-BASE"><a href="#Hello-BASE" class="headerlink" title="Hello, BASE"></a>Hello, BASE</h2><p>在这样的环境中，BASE 这样的思路也许会更加合适。BASE 是下列英文的缩写:</p>
+<ul>
+<li>Basically Available（基本可用）</li>
+<li>Soft-state（柔性事务）</li>
+<li>Eventually consistent（最终一致性）</li>
+</ul>
+<p>在 BASE 中，强调可用性的同时，引入了最终一致性这个概念，不像ACID，它并不需要每个事务都是一致的，只需要整个系统经过一定时间后最终达到是一致的。比如天猫的生鲜市场，也许在卖的过程中，每个用户看到的库存数是不一样的，但最终买完后，库存数都为0。</p>
+<p>有趣的是，ACID 的意思是酸，而 BASE 却是碱的意思，因此这是一个对立的东西。其实，从本质上来讲，酸（ACID）强调的一致性（CAP中的C），而碱（BASE）强调是可用性（CAP中的A）。</p>
+<h2 id="BASE-Oracle-Sharding"><a href="#BASE-Oracle-Sharding" class="headerlink" title="BASE + Oracle = Sharding"></a>BASE + Oracle = Sharding</h2><p>在这次的数据库项目中，我们仔细地分析了需求，发现一致性并不是这个项目强调的重点，相反，可用性在一款强调体验的功能性 APP 中拥有更大的比重，所以，我们尝试着引入了 BASE 的一个应用：Sharding（分片）。</p>
+<p>Sharding 可以简单定义为将数据库分布到多个物理节点上的一个分区方案。每一个分区包含数据库的某一部分，称为一个 shard ，分区方式可以是任意的，并不局限于传统的水平分区和垂直分区。</p>
+<p>我们采用的是基于路由表的切分方式，这是一种非常松散的方法。我们启动两台服务器，在负载均衡服务器上使用 Nginx 来维护一张路由表，对发往后端的数据进行一个重定向，把相应的请求定向发往特定的 shard。这里我们划分的 shard 其实比较简单，只分为 auth shard 和 business shard。权限管理在我们的项目中非常普遍，所以我们专门建立 auth 相关的数据库，并在 API 设计时就有意将权限和业务分离，方便之后的重定向。这样的好处是显而易见的：避免过多的 auth 相关操作所带来的整体数据库维持 ACID 的成本。同时，我们也可以很方便地为热门的 auth 数据做缓存。</p>
+<h2 id="尾声"><a href="#尾声" class="headerlink" title="尾声"></a>尾声</h2><p>BASE 和 ACID 是数据库的两大基石性质，他们俩看似一个是“酸”一个是“碱”，但并不是不相容的。相反，合理取舍一致性和可用性，说不定能带来非常不错的效果。</p>
 
     
-
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
-    $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
-    }
-</script>
 
     
 </div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2017/06/19/聊聊作用域/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     
